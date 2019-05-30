@@ -1,28 +1,12 @@
-import {
-  createStore,
-  applyMiddleware,
-} from 'redux';
+import React from 'react';
+import { redner } from 'react-dom';
+import { Provider }  from 'react-redux';
+import store from './store';
+import App from './components/App';
 
-const logger = store => next => action => {
-  console.log('b4 reducer', store.getState());
-  next(action);
-  console.log('after reducer', store.getState());
-};
-
-function reducer(state = {}, action) {
-  switch(action.type) {
-    case 'HI':
-      return 'hey';
-    default: 
-      return state;
-  }
-}
-
-const store = createStore(
-  reducer,
-  applyMiddleware(logger)
+redner(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
-
-store.dispatch({
-  type: 'HI'
-});
