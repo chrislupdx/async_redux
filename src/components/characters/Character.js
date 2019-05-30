@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Character({ character }) {
   return (
     <section>
-      <Link to={`/redux/-avatar-promise/${character.id}`}>
+      <Link to={`/redux-avatar-promise/${character.id}`}>
         <img src={character.img} />
         <p>{character.name}</p>
       </Link>
