@@ -23,18 +23,18 @@ class CharacterById extends PureComponent {
 
       if(loading) return <h1> Loading </h1>;
 
-      return <CharacterDetail character={character} />;
+      return <p>whatever</p>;
     }
 }
 
 const mapStateToProps = state => ({
   character: getCharacter(state),
-  loading: getCharactersLoading
+  loading: getCharacterLoading(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   fetch() {
-    dispatch(fetchCharacter);
+    dispatch(fetchCharacter(props.match.params.id));
   }
 });
 

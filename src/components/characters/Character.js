@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Character({ character }) {
   return (
     <section>
-      <img src={character.img} />
-      <p>{character.name}</p>
+      <Link to={`/redux/-avatar-promise/${character.id}`}>
+        <img src={character.img} />
+        <p>{character.name}</p>
+      </Link>
     </section>
   );
 }
