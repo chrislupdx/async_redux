@@ -5,4 +5,4 @@ export const [
   fetchCharacter,
   FETCH_CHARACTER,
   FETCH_CHARACTER_LOADING
-] = createAction('FETCH_CHARACTER', getCharacter);
+] = createAction('FETCH_CHARACTER',  getCharacter);
